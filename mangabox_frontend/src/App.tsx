@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import NoAuthRouter from "./routers/NoAuthRouter";
 import {BrowserRouter} from "react-router-dom";
+import {HelmetProvider} from "react-helmet-async";
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Routing/>
+            <HelmetProvider>
+                <Routing/>
+            </HelmetProvider>
         </BrowserRouter>
     )
 }

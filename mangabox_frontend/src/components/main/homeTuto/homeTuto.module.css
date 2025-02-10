@@ -1,0 +1,51 @@
+.tuto{
+    width: 100%;
+    text-align: center;
+}
+
+.tuto h2 {
+    margin: 8px 0 0 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    text-align: center;
+}
+.step h3 {
+    color: var(--claret);
+}
+
+.step p {
+    font-size: 20px;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+}
+
+.arrowLine {
+    width: 72px;
+    height: 8px;
+    background-color: var(--claret);
+}
+
+.arrowHead {
+    width: 0;
+    height: 0;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 32px solid var(--claret);
+}
