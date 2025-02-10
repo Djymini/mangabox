@@ -1,0 +1,58 @@
+:root {
+    --darkGreen : #223127;
+    --claret: #9C0D38;
+    --blush: #943b53;
+    --mauve: #DBBBF5;
+    --aliceBlue: #DDF0FF;
+}
+
+body {
+    font-family: "Merriweather Sans", serif;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+button {
+    padding: 8px 8px;
+    border: 0;
+    border-radius: 16px;
+    background-color: var(--claret);
+    color: white;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+button:hover {
+    background-color: var(--blush);
+    box-shadow: 0 0 20px var(--claret);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #6e2b3e;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
