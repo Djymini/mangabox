@@ -3,6 +3,8 @@ import './App.css';
 import NoAuthRouter from "./routers/NoAuthRouter";
 import {BrowserRouter} from "react-router-dom";
 import {HelmetProvider} from "react-helmet-async";
+import {ThemeProvider} from "@mui/material";
+import mangaboxMuiTheme from "./_themes/mangaboxMuiTheme";
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
     return (
         <BrowserRouter>
             <HelmetProvider>
-                <Routing/>
+                <ThemeProvider theme={mangaboxMuiTheme}>
+                    <Routing/>
+                </ThemeProvider>
             </HelmetProvider>
         </BrowserRouter>
     )
