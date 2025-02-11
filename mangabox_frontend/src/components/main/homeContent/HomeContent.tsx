@@ -1,7 +1,16 @@
 import {FC} from 'react';
 import styles from "../homeContent/homeContent.module.css"
+import {useNavigate} from "react-router-dom";
+
+
 
 const HomeContent: FC<{}> = ({}) => {
+    const navigation = useNavigate()
+
+    const goToProductsPage = () => {
+        navigation("/Products")
+    }
+
     return (
         <>
             <div className={styles.background}></div>
@@ -12,7 +21,7 @@ const HomeContent: FC<{}> = ({}) => {
                 </div>
                 <div className={styles.contentMain}>
                     <h2>Bienvenue !</h2>
-                    <button>Commencez votre commande</button>
+                    <button onClick={goToProductsPage}>Commencez votre commande</button>
                 </div>
             </section>
         </>

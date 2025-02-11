@@ -12,11 +12,11 @@ const HomeTuto: FC<{}> = ({}) => {
         <div className={styles.tuto}>
             <h2>Commandez vos manga facilement</h2>
             <section className={styles.container}>
-                <TutoStep title={"Séléctionnez"} Icon={AddCircleOutlineIcon} text={"Chercher vos article et ajoutez les à votre panier"}/>
+                <TutoStep title={"Sélectionnez"} Icon={AddCircleOutlineIcon} text={"Chercher vos article et ajoutez les à votre panier"}/>
                 <Arrow/>
                 <TutoStep title={"Validez"} Icon={ShoppingBasketIcon} text={"Vérifiez vos articles et validez votre commande"}/>
                 <Arrow/>
-                <TutoStep title={"Payez"} Icon={CreditCardIcon} text={"Connectez-vous et réalisez votre paiment"}/>
+                <TutoStep title={"Payez"} Icon={CreditCardIcon} text={"Connectez-vous et réalisez votre paiement"}/>
             </section>
         </div>
     );
