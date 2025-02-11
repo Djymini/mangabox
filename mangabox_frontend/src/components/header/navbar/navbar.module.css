@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.searchContainer form{
+.searchContainer div{
     display: flex;
     align-items: center;
 }
