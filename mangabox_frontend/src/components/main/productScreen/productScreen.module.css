@@ -326,3 +326,40 @@
     box-shadow: none;
     transform: scale(0.98);
 }
+
+
+.cardButtonContainer {
+    margin: 0;
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    background-color: var(--claret);
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+
+.cardButtonContainer button {
+    padding: 4px;
+    border: 0;
+    border-radius: 16px;
+    background-color: var(--claret);
+    color: white;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.cardButtonContainer button:hover {
+    background-color: var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.cardButtonContainer button:active {
+    background-color: #6e2b3e;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.95);
+}

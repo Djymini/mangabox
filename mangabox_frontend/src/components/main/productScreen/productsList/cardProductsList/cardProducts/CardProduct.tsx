@@ -4,12 +4,25 @@ import styles from "../../../productScreen.module.css"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import {IconButton} from "@mui/material";
 import {CartContext} from "../../../../../../context/CartContext";
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
 
 const CardProduct: FC<{manga:MangaType}> = ({manga}) => {
     const mangaContentContext = useContext(CartContext);
 
     const handleButtonAddClick = () => {
        mangaContentContext?.setMangaContent(prevState => ([...prevState, manga]))
+    }
+
+    const handleButtonRemoveClick = () => {
+        if (mangaContentContext?.mangaContent) {
+            const indexSearch = mangaContentContext.mangaContent.indexOf(manga);
+            if (indexSearch !== -1) {
+                const newMangaContent = mangaContentContext.mangaContent.filter((item, index) => index !== indexSearch);
+
+                mangaContentContext.setMangaContent(newMangaContent);
+            }
+        }
     }
 
     return (
@@ -19,9 +32,19 @@ const CardProduct: FC<{manga:MangaType}> = ({manga}) => {
             <p className={styles.cardAuthor}>{manga.author}</p>
             <div className={styles.cardContentShop}>
                 <span>{manga.price + "€"}</span>
-                <IconButton aria-label="add to shopping cart" sx={{fontSize: "32px"}} onClick={handleButtonAddClick}>
-                    <AddCircleOutlineIcon sx={{fontSize: "32px"}}/>
-                </IconButton>
+                {mangaContentContext?.mangaContent.indexOf(manga) === -1 ? (
+                        <IconButton aria-label="add to shopping cart" sx={{fontSize: "32px"}} onClick={handleButtonAddClick}>
+                            <AddCircleOutlineIcon sx={{fontSize: "32px"}}/>
+                        </IconButton>
+                )
+                    :
+                    (
+                        <div className={styles.cardButtonContainer}>
+                            <button onClick={handleButtonRemoveClick}><RemoveIcon/></button>
+                            <label>{mangaContentContext?.mangaContent.filter((item) => item.title === manga.title).length}</label>
+                            <button onClick={handleButtonAddClick}><AddIcon/></button>
+                        </div>
+                    )}
             </div>
         </div>
     );

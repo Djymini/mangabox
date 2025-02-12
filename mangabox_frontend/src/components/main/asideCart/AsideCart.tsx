@@ -1,8 +1,8 @@
 import {FC, useContext} from 'react';
 import styles from "./asideCart.module.css"
-import BadgeCart from "./badgeCart/BadgeCart";
 import HeaderAsideCart from "./headerAsideCart/HeaderAsideCart";
 import {CartContext} from "../../../context/CartContext";
+import BodyAsideCart from "./bodyAsideCart/BodyAsideCart";
 
 const AsideCart: FC<{}> = ({}) => {
     const mangaContentContext = useContext(CartContext);
@@ -20,9 +20,16 @@ const AsideCart: FC<{}> = ({}) => {
         }
     };
 
+    const handleButtonClearCart = () => {
+        mangaContentContext?.setMangaContent([]);
+    }
+
     return (
         <aside className={styles.asideCart}>
             <HeaderAsideCart total={total()} badgeValue={mangaContentContext?.mangaContent !== undefined ? mangaContentContext.mangaContent.length : 0}/>
+            <BodyAsideCart/>
+            <button style={{marginBottom: "16px"}} onClick={handleButtonClearCart}>Vider le panier</button>
+            <button style={{marginBottom: "16px"}}>Valider et payer</button>
         </aside>
     );
 };
