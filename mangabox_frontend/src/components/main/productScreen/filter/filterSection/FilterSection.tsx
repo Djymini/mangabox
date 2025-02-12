@@ -1,14 +1,11 @@
 import {FC} from 'react';
-import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
+import styles from "../../productScreen.module.css"
 
-const FilterSection: FC<{children:any, titleSection:string}> = ({children, titleSection}) => {
+const FilterSection: FC<{children:any, titleSection:string, display: string}> = ({children, titleSection, display}) => {
     return (
-        <div>
+        <div className={styles.filterSection} style={{display: display}}>
             <h4>{titleSection}</h4>
-            <div>
-                {children}
-            </div>
+            {children}
         </div>
     );
 };

@@ -1,18 +1,19 @@
 import {FC, useState} from 'react';
+import styles from "../../../../productScreen.module.css"
 
-const CheckBoxItem: FC<{nameGenre: string, arrayGenre: number[], genreNumber:number,updateArrayGenre: (genreNumber: number, isChecked: boolean) => void  }> = ({nameGenre, arrayGenre, genreNumber, updateArrayGenre}) => {
-    const [isChecked, setIsChecked] = useState<boolean>(arrayGenre.includes(genreNumber));
+const CheckBoxItem: FC<{nameGenre: string, arrayGenre: string[], updateArrayGenre: (genre: string, isChecked: boolean) => void  }> = ({nameGenre, arrayGenre, updateArrayGenre}) => {
+    const [isChecked, setIsChecked] = useState<boolean>(arrayGenre.includes(nameGenre));
 
     const handleChange = () => {
         setIsChecked(!isChecked)
-        updateArrayGenre(genreNumber, isChecked)
+        updateArrayGenre(nameGenre, isChecked)
     }
 
-
     return (
-        <label className="container">{nameGenre}
+        <label className={styles.checkbox}>
             <input type="checkbox" checked={isChecked} onChange={handleChange}/>
-            <span className="checkmark"></span>
+            <span className={styles.checkmark}></span>
+            {nameGenre}
         </label>
     );
 };

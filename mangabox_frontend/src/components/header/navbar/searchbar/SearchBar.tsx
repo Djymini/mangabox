@@ -13,6 +13,7 @@ const SearchBar: FC<{}> = ({}) => {
 
     const handleSearchButtonClick = () => {
         searchContext?.setSearch(searchInput);
+        setSearchInput("");
     }
 
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {

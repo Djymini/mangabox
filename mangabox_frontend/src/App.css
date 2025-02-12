@@ -1,5 +1,5 @@
 :root {
-    --darkGreen : #223127;
+    --darkGreen : rgb(34, 49, 39);
     --claret: #9C0D38;
     --blush: #943b53;
     --mauve: #DBBBF5;
@@ -36,7 +36,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--darkGreen);
 }
 
 

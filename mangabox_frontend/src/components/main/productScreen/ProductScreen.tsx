@@ -1,11 +1,14 @@
 import {FC} from 'react';
 import Filter from "./filter/Filter";
+import ProductsList from "./productsList/ProductsList";
+import styles from "./productScreen.module.css"
 
 const ProductScreen: FC<{}> = ({}) => {
     return (
-        <div>
+        <section className={styles.productScreen}>
             <Filter/>
-        </div>
+            <ProductsList/>
+        </section>
     );
 };
 
