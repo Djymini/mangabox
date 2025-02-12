@@ -2,6 +2,7 @@
     background-color: var(--lightGrey);
     display: flex;
     padding: 16px;
+    box-sizing: border-box;
 }
 
 /*Filter part*/
