@@ -1,15 +1,16 @@
 import {FC, useEffect, useState} from 'react';
-import CardProducts from "./cardProducts/CardProducts";
+import CardProduct from "./cardProducts/CardProduct";
 import data from "../../../../../dataFake/manga_stock.json"
 import {MangaType} from "../../../../../MangaType";
+import styles from "../../productScreen.module.css"
 
 const CardProductsList: FC<{}> = ({}) => {
     const [arrayTest, setArrayTest] = useState<MangaType[]>(data)
 
     return (
-        <div>
+        <div className={styles.listCardProduct}>
             {arrayTest.map((manga, index) => (
-                <CardProducts manga={manga}/>
+                <CardProduct manga={manga}/>
             ))}
         </div>
     );

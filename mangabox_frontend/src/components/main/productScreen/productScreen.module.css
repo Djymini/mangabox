@@ -1,9 +1,10 @@
 .productScreen {
-    background-color: var(--aliceBlue);
+    background-color: var(--lightGrey);
     display: flex;
     padding: 16px;
 }
 
+/*Filter part*/
 .filter {
     display: flex;
     flex-direction: column;
@@ -107,7 +108,7 @@
     padding: 5px;
     box-sizing: border-box;
     font-size: 14px;
-    background-color: #d5d5d5;
+    background-color: var(--lightGrey);
     border: none;
     border-radius: 4px;
     margin-bottom: 8px;
@@ -135,7 +136,6 @@
     user-select: none;
 }
 
-/* Hide the browser's default checkbox */
 .checkbox input {
     position: absolute;
     opacity: 0;
@@ -144,7 +144,6 @@
     width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmark {
     position: absolute;
     top: 0;
@@ -159,24 +158,22 @@
     background-color: #ccc;
 }
 
-/* When the checkbox is checked, add a blue background */
 .checkbox input:checked ~ .checkmark {
     background-color: #2196F3;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when checked */
+
 .checkbox input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
+
 .checkbox .checkmark:after {
     left: 7px;
     top: 4px;
@@ -211,8 +208,120 @@
     font-size: 14px;
     padding: 5px;
     box-sizing: border-box;
-    background-color: #d5d5d5;
+    background-color: var(--lightGrey);
     border: none;
     border-radius: 4px;
     margin-bottom: 8px;
+}
+
+
+/*Product list*/
+.sortSelector {
+    width: 50%;
+    margin-bottom: 16px;
+}
+
+.sortSelector select {
+    font-size: 20px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: var(--claret);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.listCardProduct {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardProduct {
+    position: relative;
+    display: grid;
+    width: 218px;
+    height: 336px;
+    border-radius: 16px;
+    grid-template-areas:
+    "title title"
+    "author author"
+    "image image"
+    "image image"
+    "shop shop";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 2fr 2fr 1fr;
+    gap: 4px;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: var(--aliceBlue);
+    box-shadow: 4px 4px 4px rgba(34, 49, 39, 0.1);
+    margin: 0 0 16px 16px;
+}
+
+
+.cardLink {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+}
+
+.cardLink img {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.cardTitle {
+    grid-area: title;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.cardAuthor{
+    grid-area: author;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
+
+.cardContentShop {
+    grid-area: shop;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.cardContentShop span {
+    font-weight: bold;
+
+}
+
+.cardContentShop button {
+    padding: 0;
+    border: 0;
+    border-radius: 16px;
+    background-color: inherit;
+    color: var(--claret);
+    font-weight: normal;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.cardContentShop button:hover {
+    background-color: inherit;
+    box-shadow: 0 0 0px var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.cardContentShop button:active {
+    background-color: rgba(34, 49, 39, 0.5);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
 }

@@ -21,7 +21,7 @@
     padding: 10px;
     box-sizing: border-box;
     font-size: 22px;
-    background-color: #d5d5d5;
+    background-color: var(--lightGrey);
     border: none;
     border-radius: 4px 0 0 4px;
 }

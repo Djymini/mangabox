@@ -26,7 +26,7 @@ const Filter: FC<{}> = ({}) => {
             <FilterSection titleSection={"Genre"} display={"block"}>
                 <CheckBoxList name={"Liste des genres"} array={mangaGenres}/>
             </FilterSection>
-            
+
             <FilterSection titleSection={"Editeur"} display={"block"}>
                 <CheckBoxList name={"Liste des éditeurs"} array={mangaPublisher}/>
             </FilterSection>

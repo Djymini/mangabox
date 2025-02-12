@@ -4,6 +4,7 @@
     --blush: #943b53;
     --mauve: #DBBBF5;
     --aliceBlue: #DDF0FF;
+    --lightGrey: #eaeaee
 }
 
 body {
@@ -52,7 +53,6 @@ button {
 
 button:hover {
     background-color: var(--blush);
-    box-shadow: 0 0 20px var(--claret);
     transform: scale(1.1);
     cursor: pointer;
 }
