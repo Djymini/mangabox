@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS user (
     role VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE IF NOT EXISTS product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     collection VARCHAR(255) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS products (
     genres JSON NOT NULL
 );
 
---INSERT INTO products (title, collection, overview, price, author, releaseDate, coverImage, stock, publisher, genres)
+--INSERT INTO product (title, collection, overview, price, author, releaseDate, coverImage, stock, publisher, genres)
 --VALUES
 --    ("Naruto Tome 1", "Naruto", "L'histoire de Naruto Uzumaki, un ninja qui rêve de devenir Hokage.", 6.99, "Masashi Kishimoto", "2000-02-21", "https://www.nautiljon.com/images/manga/00/90/naruto_109.webp?1731141057", 150, "Kana", '["Action", "Aventure", "Shonen"]'),
 --    ("One Piece Tome 1", "One Piece", "Luffy, un jeune pirate, part à la recherche du trésor légendaire : le One Piece.", 7.99, "Eiichiro Oda", "1997-07-22", "https://www.nautiljon.com/images/manga_volumes/00/89/98.webp?1706911272", 200, "Glénat", '["Aventure", "Action", "Fantasy"]'),
@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE TABLE IF NOT EXISTS `order` (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
+    date DATETIME(0) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
@@ -53,7 +54,7 @@ CREATE TABLE IF NOT EXISTS product_order (
     order_id INT NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
     PRIMARY KEY (product_id, order_id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (product_id) REFERENCES product(id),
     FOREIGN KEY (order_id) REFERENCES `order`(id)
 );
 
