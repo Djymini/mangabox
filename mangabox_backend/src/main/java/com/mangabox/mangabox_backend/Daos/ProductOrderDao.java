@@ -29,7 +29,7 @@ public class ProductOrderDao {
 
     public ProductOrder save(ProductOrder productOrder) {
         String sql = "INSERT INTO product_order (product_id, order_id, quantity) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, productOrder.getProduct_id()), productOrder.getOrder_id(), productOrder.getQuantity());
+        jdbcTemplate.update(sql, productOrder.getProduct_id(), productOrder.getOrder_id(), productOrder.getQuantity());
 
         return productOrder;
     }
