@@ -13,6 +13,11 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(RessourceNotFoundException.class)
+    public ResponseEntity<String> handleResourceNotFound(RessourceNotFoundException exception) {
+        return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(NoHandlerFoundException.class)
     public ResponseEntity<String> handleNotFoundError(NoHandlerFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erreur 404 : Le chemin que vous avez demandé n'existe pas.");
