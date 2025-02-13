@@ -1,6 +1,7 @@
 package com.mangabox.mangabox_backend.Daos;
 
 import com.mangabox.mangabox_backend.entities.User;
+import com.mangabox.mangabox_backend.exceptions.UserException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -33,7 +34,7 @@ public class UserDao {
         return jdbcTemplate.query(sql, userRowMapper, id)
                 .stream()
                 .findFirst()
-                .orElseThrow(() -> new UserNotFoundException("Utilisateur avec l'ID : " + id + " n'existe pas"));
+                .orElseThrow(() -> new UserException("Utilisateur avec l'ID : " + id + " n'existe pas"));
     }
 
     public User findByEmail(String email) {
@@ -41,7 +42,7 @@ public class UserDao {
         return jdbcTemplate.query(sql, userRowMapper, email)
                 .stream()
                 .findFirst()
-                .orElseThrow(() -> new UserNotFoundException("Utilisateur avec l'email : " + email + " n'existe pas"));
+                .orElseThrow(() -> new UserException("Utilisateur avec l'email : " + email + " n'existe pas"));
     }
 
     public int findIdByEmail(String email){
@@ -49,7 +50,7 @@ public class UserDao {
         try {
             return jdbcTemplate.queryForObject(sql, Integer.class, email);
         } catch (EmptyResultDataAccessException e) {
-            throw new UserNotFoundException("Il y a aucun Id qui correspond à l'email :" + email);
+            throw new UserException("Il y a aucun Id qui correspond à l'email :" + email);
         }
     }
 
@@ -62,14 +63,14 @@ public class UserDao {
 
     public User update(int id, User user) {
         if (!userExists(id)) {
-            throw new UserFoundException("L'utilisateur avec l'ID : " + id + " n'existe pas");
+            throw new UserException("L'utilisateur avec l'ID : " + id + " n'existe pas");
         }
 
         String sql = "UPDATE user SET email = ?, password = ? WHERE id = ?";
         int rowsAffected = jdbcTemplate.update(sql, user.getEmail(), user.getPassword(), id);
 
         if (rowsAffected <= 0) {
-            throw new UserNotFoundException("Échec de la mise à jour de l'utilisateur avec l'ID : " + id);
+            throw new UserException("Échec de la mise à jour de l'utilisateur avec l'ID : " + id);
         }
 
         return this.findById(id);
