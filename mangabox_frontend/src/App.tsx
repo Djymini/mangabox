@@ -9,19 +9,24 @@ import {CartContext} from "./context/CartContext";
 import {MangaType} from "./MangaType";
 import {AuthContext} from "./context/AuthContext";
 import {authReducer, initialAuthState} from "./reducer/LoginReducer";
+import {getToken} from "./utilis/storage";
+import AuthRouter from "./routers/AuthRouter";
 
 
 function App() {
     const [state, dispatch] = useReducer(authReducer, initialAuthState);
     const [mangaContent, setMangaContent] = useState<MangaType[]>([])
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         console.log(mangaContent);
     }, [mangaContent]);
 
     const Routing = () => {
-        return <NoAuthRouter/>;
-    }
+        console.log(state);
+        console.log(dispatch)
+        return getToken() ? <AuthRouter/> : <NoAuthRouter/>;
+    };
 
 
     return (
@@ -29,7 +34,7 @@ function App() {
             <HelmetProvider>
                 <ThemeProvider theme={mangaboxMuiTheme}>
                     <AuthContext.Provider value={{state, dispatch}}>
-                        <CartContext.Provider value={{mangaContent, setMangaContent}}>
+                        <CartContext.Provider value={{mangaContent, setMangaContent, isVisible, setIsVisible}}>
                             <Routing/>
                         </CartContext.Provider>
                     </AuthContext.Provider>

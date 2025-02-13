@@ -126,7 +126,7 @@ const RegisterForm: FC<{}> = () => {
 
                     {/* Bouton d'envoi */}
                     <button className={styles.submit} type="submit" disabled={isSubmitting}>
-                        {isSubmitting ? 'Enregistrement...' : 'Validez votre inscription'}
+                        {isSubmitting ? 'Enregistrement...' : 'Inscrivez-vous'}
                     </button>
                 </form>
             )}

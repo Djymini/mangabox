@@ -11,7 +11,7 @@ const ProductScreen: FC<{}> = ({}) => {
         <section className={styles.productScreen}>
             <Filter/>
             <ProductsList/>
-            {mangaContentContext?.mangaContent !== undefined && mangaContentContext.mangaContent.length > 0 ? (
+            {mangaContentContext?.mangaContent !== undefined && mangaContentContext.isVisible ? (
                     <div style={{width: "200px"}}></div>
                 )
                 :

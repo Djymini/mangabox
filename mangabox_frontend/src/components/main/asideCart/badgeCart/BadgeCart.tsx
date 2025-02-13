@@ -4,8 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge, {badgeClasses} from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
 
-const BadgeCart: FC<{value:number}> = ({value}) => {
-    const CartBadge = styled(Badge)`
+export const CartBadge = styled(Badge)`
         & .${badgeClasses.badge} {
             background-color: var(--aliceBlue);
             color: var(--darkGreen);
@@ -13,6 +12,9 @@ const BadgeCart: FC<{value:number}> = ({value}) => {
             right: -6px;
         }
     `;
+
+const BadgeCart: FC<{value:number}> = ({value}) => {
+
 
     return (
         <>

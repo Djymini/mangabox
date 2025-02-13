@@ -3,6 +3,9 @@ import styles from "./asideCart.module.css"
 import HeaderAsideCart from "./headerAsideCart/HeaderAsideCart";
 import {CartContext} from "../../../context/CartContext";
 import BodyAsideCart from "./bodyAsideCart/BodyAsideCart";
+import CloseIcon from "@mui/icons-material/Close";
+import {IconButton} from "@mui/material";
+import {paletteColor} from "../../../_themes/paletteColor";
 
 const AsideCart: FC<{}> = ({}) => {
     const mangaContentContext = useContext(CartContext);
@@ -24,8 +27,15 @@ const AsideCart: FC<{}> = ({}) => {
         mangaContentContext?.setMangaContent([]);
     }
 
+    const handleCloseAside = () => {
+        mangaContentContext?.setIsVisible(!mangaContentContext?.isVisible)
+    }
+
     return (
         <aside className={styles.asideCart}>
+            <IconButton aria-label="close the login and register" onClick={handleCloseAside}>
+                <CloseIcon sx={{color: paletteColor.darkGreen}}/>
+            </IconButton>
             <HeaderAsideCart total={total()} badgeValue={mangaContentContext?.mangaContent !== undefined ? mangaContentContext.mangaContent.length : 0}/>
             <BodyAsideCart/>
             <button style={{marginBottom: "16px"}} onClick={handleButtonClearCart}>Vider le panier</button>

@@ -10,7 +10,7 @@ const Products: FC<{}> = ({}) => {
     return (
             <Page title={"Nos produits"}>
                 <ProductScreen/>
-                {mangaContentContext?.mangaContent !== undefined &&  mangaContentContext.mangaContent.length > 0 ? (
+                {mangaContentContext?.isVisible ? (
                         <AsideCart/>
                 )
                 :

@@ -9,7 +9,6 @@ const MyComponent: FC<{}> = ({}) => {
             <SortSelector/>
             <FilterInfo/>
             <CardProductsList/>
-
         </section>
     );
 };

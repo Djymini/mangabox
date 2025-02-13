@@ -18,6 +18,7 @@
 }
 
 .headerAsideCart {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,6 +26,7 @@
     background: var(--claret);
     color: white;
     margin-top: 8px;
+    box-sizing: border-box;
 }
 
 .headerAsideCart a {

@@ -42,7 +42,7 @@ public class UserDao {
         return jdbcTemplate.query(sql, userRowMapper, email)
                 .stream()
                 .findFirst()
-                .orElseThrow(() -> new UserException("Utilisateur avec l'email : " + email + " n'existe pas"));
+                .orElseThrow(() -> new UserException("Bad credential"));
     }
 
     public int findIdByEmail(String email){
