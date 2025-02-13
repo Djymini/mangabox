@@ -27,8 +27,9 @@ export const get = (url: string, config?: {}) => {
         })
 }
 
-export const postCineDb = (url: string, data: any, config?: {}) => {
+export const post = (url: string, data: any, config?: {}) => {
     const jsonData = JSON.stringify(data);
+    console.log(jsonData);
     return axios.post('http://localhost:8080' + url, jsonData, config)
         .then((response) => {
             return response;
@@ -39,7 +40,7 @@ export const postCineDb = (url: string, data: any, config?: {}) => {
 
 }
 
-export const putCineDb = (url: string, data: any, config?: {}) => {
+export const put = (url: string, data: any, config?: {}) => {
     return axios.put('http://localhost:8080' + url, data, config)
         .then((response) => {
             return response.data;
@@ -50,7 +51,7 @@ export const putCineDb = (url: string, data: any, config?: {}) => {
 
 }
 
-export const deleteCineDb = (url: string, config?: {}) => {
+export const deleteRequest = (url: string, config?: {}) => {
     return axios.delete('http://localhost:8080' + url, config)
         .then((response) => {
             return response;

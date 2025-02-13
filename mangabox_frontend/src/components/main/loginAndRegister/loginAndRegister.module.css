@@ -20,6 +20,12 @@
     position: relative;
 }
 
+.error{
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+}
+
 .inputContainer input, .form button {
     outline: none;
     border: 1px solid #e5e7eb;

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useReducer, useState} from 'react';
 import './App.css';
 import NoAuthRouter from "./routers/NoAuthRouter";
 import {BrowserRouter} from "react-router-dom";
@@ -7,9 +7,12 @@ import {ThemeProvider} from "@mui/material";
 import mangaboxMuiTheme from "./_themes/mangaboxMuiTheme";
 import {CartContext} from "./context/CartContext";
 import {MangaType} from "./MangaType";
+import {AuthContext} from "./context/AuthContext";
+import {authReducer, initialAuthState} from "./reducer/LoginReducer";
 
 
 function App() {
+    const [state, dispatch] = useReducer(authReducer, initialAuthState);
     const [mangaContent, setMangaContent] = useState<MangaType[]>([])
 
     useEffect(() => {
@@ -25,9 +28,11 @@ function App() {
         <BrowserRouter>
             <HelmetProvider>
                 <ThemeProvider theme={mangaboxMuiTheme}>
-                    <CartContext.Provider value={{mangaContent, setMangaContent}}>
-                        <Routing/>
-                    </CartContext.Provider>
+                    <AuthContext.Provider value={{state, dispatch}}>
+                        <CartContext.Provider value={{mangaContent, setMangaContent}}>
+                            <Routing/>
+                        </CartContext.Provider>
+                    </AuthContext.Provider>
                 </ThemeProvider>
             </HelmetProvider>
         </BrowserRouter>

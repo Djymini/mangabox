@@ -1,9 +1,17 @@
 package com.mangabox.mangabox_backend.entities;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
+
 public class User {
     private int id;
+
+    @Email(message = "L'adresse mail rentrée n'est pas valide")
     private String email;
+
+    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[=#?!@$%^&*-]).{8,}$", message = "Mot de passe invalide")
     private String password;
+
     private String role;
 
     public User() {}

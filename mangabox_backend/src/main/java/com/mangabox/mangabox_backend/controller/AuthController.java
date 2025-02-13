@@ -3,6 +3,7 @@ package com.mangabox.mangabox_backend.controller;
 import com.mangabox.mangabox_backend.Daos.UserDao;
 import com.mangabox.mangabox_backend.entities.User;
 import com.mangabox.mangabox_backend.security.JwtUtil;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
+    public ResponseEntity<String> registerUser(@Valid @RequestBody User user) {
         boolean userFound = userDao.existsByEmail(user.getEmail());
         if (userFound) {
             return ResponseEntity.badRequest().body("Error: Email is already in use!");
