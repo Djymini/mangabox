@@ -52,6 +52,22 @@
     width: 25%;
 }
 
+.loginAndRegisterWindow {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: fit-content;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+.loginAndRegisterContainer {
+    display: flex;
+
+}
+
 @media screen and (max-width: 950px) {
     .contentMain button {
         font-size: 24px;
@@ -68,5 +84,7 @@
         width: 40%;
     }
 }
+
+
 
 
