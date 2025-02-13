@@ -1,16 +1,20 @@
 package com.mangabox.mangabox_backend.entities;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class Order {
+public class OrderCommand {
+    DateTimeFormatter formatDate = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
     private  int id;
     private int user_id;
-    private LocalDate date;
+    private LocalDateTime date;
 
-    public Order() {
+    public OrderCommand() {
     }
 
-    public Order(int id, int user_id, LocalDate date) {
+    public OrderCommand(int id, int user_id, LocalDateTime date) {
         this.id = id;
         this.user_id = user_id;
         this.date = date;
@@ -32,11 +36,11 @@ public class Order {
         this.user_id = user_id;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }

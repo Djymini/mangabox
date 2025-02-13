@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS product (
 --    ("Mob Psycho 100 Tome 1", "Mob Psycho 100", "Un adolescent avec des pouvoirs psychiques cherche à vivre une vie normale.", 6.99, "ONE", "2012-04-18", "https://www.nautiljon.com/images/manga/00/65/mini/mob_psycho_100_4356.webp?11718273045", 190, "Kurokawa", '["Comédie", "Action", "Psychologique"]');
 
 
-CREATE TABLE IF NOT EXISTS `order` (
+CREATE TABLE IF NOT EXISTS orderCommand (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     date DATETIME(0) NOT NULL,
@@ -55,6 +55,6 @@ CREATE TABLE IF NOT EXISTS product_order (
     quantity INT NOT NULL DEFAULT 1,
     PRIMARY KEY (product_id, order_id),
     FOREIGN KEY (product_id) REFERENCES product(id),
-    FOREIGN KEY (order_id) REFERENCES `order`(id)
+    FOREIGN KEY (order_id) REFERENCES orderCommand(id)
 );
 
