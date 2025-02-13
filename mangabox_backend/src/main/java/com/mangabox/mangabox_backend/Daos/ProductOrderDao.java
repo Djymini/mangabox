@@ -1,5 +1,6 @@
 package com.mangabox.mangabox_backend.Daos;
 
+import com.mangabox.mangabox_backend.entities.OrderCommand;
 import com.mangabox.mangabox_backend.entities.ProductOrder;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -21,6 +22,11 @@ public class ProductOrderDao {
             rs.getInt("order_id"),
             rs.getInt("quantity")
     );
+
+    public List<ProductOrder> findAll() {
+        String sql = "SELECT * FROM product_order";
+        return jdbcTemplate.query(sql, productOrderRowMapper);
+    }
 
     public List<ProductOrder> findByOrderId(int orderId) {
         String sql = "SELECT * FROM movie_list WHERE order_id = ?";
