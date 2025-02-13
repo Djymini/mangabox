@@ -1,6 +1,7 @@
 package com.mangabox.mangabox_backend.Daos;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.mangabox.mangabox_backend.entities.Product;
 import com.mangabox.mangabox_backend.exceptions.RessourceNotFoundException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -55,9 +56,9 @@ public class ProductDao {
     }
 
     public Product save(Product product) {
+        Gson gson = new Gson();
         String sql = "INSERT INTO product (title, collection, overview, price, author, releaseDate, coverImage, stock, publisher, genres) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, product.getTitle(), product.getCollection(), product.getPrice(), product.getAuthor(), product.getReleaseDate(), product.getCoverImage(), product.getStock(), product.getPublisher(), product.getGenres());
-
+        jdbcTemplate.update(sql, product.getTitle(), product.getCollection(),product.getOverview(), product.getPrice(), product.getAuthor(), product.getReleaseDate(), product.getCoverImage(), product.getStock(), product.getPublisher(), gson.toJson(product.getGenres()));
         String sqlGetId = "SELECT LAST_INSERT_ID()";
         int id = jdbcTemplate.queryForObject(sqlGetId, int.class);
 
@@ -65,13 +66,20 @@ public class ProductDao {
         return product;
     }
 
+    public List<Product> findBySearch(String search) {
+        String searchPattern = "%" + search + "%";
+        String sql = "SELECT * FROM product WHERE title LIKE ?";
+        return jdbcTemplate.query(sql, productRowMapper, searchPattern);
+    }
+
     public Product update(int id, Product product) {
+        Gson gson = new Gson();
         if (!productExists(id)) {
             throw new RessourceNotFoundException("Produit avec l'ID : " + id + " n'existe pas");
         }
 
         String sql = "UPDATE product SET title = ?, collection = ?, overview = ?, price = ?, author = ?, releaseDate = ?, coverImage = ?, stock = ?, publisher = ?, genres = ? WHERE id = ?";
-        int rowsAffected = jdbcTemplate.update(sql, product.getTitle(), product.getCollection(), product.getPrice(), product.getAuthor(), product.getReleaseDate(), product.getCoverImage(), product.getStock(), product.getPublisher(), product.getGenres(), id);;
+        int rowsAffected = jdbcTemplate.update(sql, product.getTitle(), product.getCollection(), product.getOverview(), product.getPrice(), product.getAuthor(), product.getReleaseDate(), product.getCoverImage(), product.getStock(), product.getPublisher(), gson.toJson(product.getGenres()), id);;
 
         if (rowsAffected <= 0) {
             throw new RuntimeException("Échec de la mise à jour du produit avec l'ID : " + id);

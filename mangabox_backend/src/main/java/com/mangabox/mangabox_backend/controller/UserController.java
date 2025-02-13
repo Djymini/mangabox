@@ -36,7 +36,7 @@ public class UserController {
         User updateUser = userDao.update(id, user);
         return ResponseEntity.ok(updateUser);
     }
-    
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable int id) {
