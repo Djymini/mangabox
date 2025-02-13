@@ -37,6 +37,14 @@ public class OrderCommandDao {
                 .orElseThrow(() -> new RessourceNotFoundException("La commande avec l'ID : " + id + " n'existe pas"));
     }
 
+    public OrderCommand findAllByUserId(int userId) {
+        String sql = "SELECT * FROM orderCommand WHERE user_id = ?";
+        return jdbcTemplate.query(sql, orderCommandRowMapper, userId)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new RessourceNotFoundException("La commande avec l'ID : " + userId + " n'existe pas"));
+    }
+
     public OrderCommand save(OrderCommand orderCommand) {
         String sql = "INSERT INTO orderCommand (id, user_id, date) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, orderCommand.getId(), orderCommand.getUser_id(), LocalDateTime.now());
@@ -54,7 +62,7 @@ public class OrderCommandDao {
         return rowsAffected > 0;
     }
 
-    private boolean productExists(Long id) {
+    private boolean orderExists(Long id) {
         String checkSql = "SELECT COUNT(*) FROM orderCommand WHERE id = ?";
         int count = jdbcTemplate.queryForObject(checkSql, Integer.class, id);
         return count > 0;
