@@ -37,17 +37,15 @@ public class OrderCommandDao {
                 .orElseThrow(() -> new RessourceNotFoundException("La commande avec l'ID : " + id + " n'existe pas"));
     }
 
-    public OrderCommand findAllByUserId(int userId) {
+    public List<OrderCommand> findAllByUserId(int userId) {
         String sql = "SELECT * FROM orderCommand WHERE user_id = ?";
-        return jdbcTemplate.query(sql, orderCommandRowMapper, userId)
-                .stream()
-                .findFirst()
-                .orElseThrow(() -> new RessourceNotFoundException("La commande avec l'ID : " + userId + " n'existe pas"));
+        return jdbcTemplate.query(sql, orderCommandRowMapper, userId);
     }
 
-    public OrderCommand save(OrderCommand orderCommand) {
-        String sql = "INSERT INTO orderCommand (id, user_id, date) VALUES (?, ?, ?)";
-        jdbcTemplate.update(sql, orderCommand.getId(), orderCommand.getUser_id(), LocalDateTime.now());
+    public OrderCommand save(int userID, OrderCommand orderCommand) {
+        orderCommand.setUser_id(userID);
+        String sql = "INSERT INTO orderCommand (user_id, date) VALUES (?, ?)";
+        jdbcTemplate.update(sql, orderCommand.getUser_id(), LocalDateTime.now());
 
         String sqlGetId = "SELECT LAST_INSERT_ID()";
         int id = jdbcTemplate.queryForObject(sqlGetId, int.class);
