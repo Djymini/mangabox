@@ -29,8 +29,9 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Product>> getProductsBySearch(@RequestParam String query) {
-        return ResponseEntity.ok(productDao.findBySearch(query));
+    public ResponseEntity<List<Product>> getProductsByCritere(@RequestParam int minPrice, @RequestParam int maxPrice, @RequestParam(required = false, defaultValue = "") String search, @RequestParam(required = false) List<String> publisher, @RequestParam(required = false) List<String> genres) {
+        List<Product> products = productDao.findWithCritere(minPrice, maxPrice, search, publisher, genres);
+        return ResponseEntity.ok(products);
     }
 
     @PostMapping
@@ -39,9 +40,15 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdProduct);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/restock/{id}")
     public ResponseEntity<Product> updateProduct(@PathVariable int id, @RequestBody Product product) {
         Product updatedProduct = productDao.update(id, product);
+        return ResponseEntity.ok(updatedProduct);
+    }
+
+    @PutMapping("/buy/{id}")
+    public ResponseEntity<Product> buyProduct(@PathVariable int id, @RequestBody Product product) {
+        Product updatedProduct = productDao.updateForBuy(id, product);
         return ResponseEntity.ok(updatedProduct);
     }
 }

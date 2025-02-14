@@ -1,13 +1,30 @@
-import {FC, useState} from 'react';
+import {FC, useContext, useEffect, useState} from 'react';
 import styles from "../../../productScreen.module.css"
 import CheckBoxItem from "./CheckBoxItem/CheckBoxItem";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import {ProductSearchContext} from "../../../../../../context/ProductSearchContexte";
 
 const CheckBoxList: FC<{name:string, array:string[]}> = ({name, array}) => {
     const [listIsVisible, setListIsVisible] = useState<boolean>(false);
     const [arrayGenre, setArrayGenre] = useState<string[]>([]);
     const [listGenre, setListGenre] = useState<string[]>(array)
+
+    const productSearchContext = useContext(ProductSearchContext)
+
+    useEffect(() => {
+        if (name === "Liste des genres"){
+            if (productSearchContext) {
+                productSearchContext.setGenres(arrayGenre);
+            }
+        }
+        else {
+            if (productSearchContext) {
+                productSearchContext.setPublisher(arrayGenre);
+            }
+        }
+
+    }, [arrayGenre]);
 
     const updateArrayGenre = (genre: string, isChecked: boolean) => {
         setArrayGenre(prevArray => {

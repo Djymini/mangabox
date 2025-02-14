@@ -1,9 +1,19 @@
-import {FC, useState} from 'react';
+import {FC, useContext, useEffect, useState} from 'react';
 import styles from "../../../productScreen.module.css"
+import {ProductSearchContext} from "../../../../../../context/ProductSearchContexte";
 
 const PriceFilter: FC<{}> = ({}) => {
     const [minPrice, setMinPrice] = useState<number>(0);
     const [maxPrice, setMaxPrice] = useState<number>(500);
+
+    const productSearchContext = useContext(ProductSearchContext)
+
+    useEffect(() => {
+        if (productSearchContext) {
+            productSearchContext.setMinPrice(minPrice);
+            productSearchContext.setMaxPrice(maxPrice);
+        }
+    }, [minPrice, maxPrice]);
 
     const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMinPrice(Number(event.target.value));

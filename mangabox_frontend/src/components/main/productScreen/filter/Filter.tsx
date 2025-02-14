@@ -7,6 +7,7 @@ import CheckBoxList from "./filterSection/checkBoxList/CheckBoxList";
 import {mangaPublisher} from "../../../../_data/mangaPublisher";
 import PriceFilter from "./filterSection/priceFilter/PriceFilter";
 import styles from "../productScreen.module.css"
+import {ProductSearchContext} from "../../../../context/ProductSearchContexte";
 
 const Filter: FC<{}> = ({}) => {
     const searchContext = useContext(SearchContext);

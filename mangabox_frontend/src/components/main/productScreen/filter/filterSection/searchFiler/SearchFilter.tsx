@@ -1,14 +1,24 @@
-import {FC, useContext} from 'react';
+import {FC, useContext, useEffect} from 'react';
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "../../../productScreen.module.css"
 import {SearchContext} from "../../../../../../context/SearchContext";
+import {ProductSearchContext} from "../../../../../../context/ProductSearchContexte";
 
 const SearchFilter: FC<{inputSearch: string}> = ({inputSearch}) => {
     const searchContext = useContext(SearchContext);
+    const productSearchContext = useContext(ProductSearchContext)
+
+    useEffect(() => {
+        console.log(searchContext?.search)
+        if (productSearchContext && searchContext) {
+            productSearchContext.setSearch(searchContext.search);
+        }
+    }, [searchContext?.search]);
 
     const handleButtonClick = () => {
-        searchContext?.setSearch("");
+        searchContext?.setSearch("");  // Vider le searchContext
+        productSearchContext?.setSearch("");
     }
 
     return (
