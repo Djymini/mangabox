@@ -12,7 +12,11 @@ const CardProduct: FC<{manga:MangaType}> = ({manga}) => {
     const mangaContentContext = useContext(CartContext);
 
     const handleButtonAddClick = () => {
-       mangaContentContext?.setMangaContent(prevState => ([...prevState, manga]))
+        if (mangaContentContext){
+            if(manga.stock - mangaContentContext?.mangaContent.filter((item) => item.title === manga.title).length > 0){
+                mangaContentContext.setMangaContent(prevState => ([...prevState, manga]))
+            }
+        }
     }
 
     const handleButtonRemoveClick = () => {
@@ -36,7 +40,9 @@ const CardProduct: FC<{manga:MangaType}> = ({manga}) => {
                     <>
                         <span>{manga.price + "€"}</span>
                         {mangaContentContext ? (
-                            <span>{"stock: " + (manga.stock - mangaContentContext?.mangaContent.filter((item) => item.title === manga.title).length)}</span>
+                            <span>
+                                {"stock: " + (manga.stock - mangaContentContext?.mangaContent.filter((item) => item.title === manga.title).length)}
+                            </span>
                         ):(
                             <></>
                         )}

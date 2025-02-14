@@ -1,6 +1,3 @@
-/* orderSummary.module.css */
-
-/* Container principal pour le récapitulatif de la commande */
 .orderSummaryContainer {
     padding: 20px;
     background-color: #f9f9f9;
@@ -10,7 +7,6 @@
     margin: 20px auto;
 }
 
-/* Titre principal */
 .orderSummaryContainer h2 {
     text-align: center;
     font-size: 24px;
@@ -18,12 +14,10 @@
     margin-bottom: 20px;
 }
 
-/* Conteneur pour les éléments du panier */
 .cartItems {
     margin-bottom: 20px;
 }
 
-/* Chaque élément de produit dans le panier */
 .cartItem {
     display: flex;
     align-items: center;
@@ -34,7 +28,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Image du manga */
 .cartItemImage {
     width: 80px;
     height: 120px;
@@ -43,30 +36,30 @@
     border-radius: 8px;
 }
 
-/* Détails du manga (titre, auteur, prix) */
 .cartItemDetails {
     flex: 1;
 }
 
-/* Titre du manga */
 .cartItemDetails h3 {
     font-size: 18px;
     margin: 0;
     color: #333;
 }
 
-/* Auteur du manga */
 .cartItemDetails p {
     font-size: 14px;
     color: #777;
     margin: 5px 0;
 }
 
-/* Contrôles de quantité */
 .quantityControls {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    background-color: var(--claret);
+    width: fit-content;
+    border-radius: 8px;
+    color: white;
 }
 
 .quantityControls span {
@@ -79,7 +72,6 @@
     padding: 5px;
 }
 
-/* Total price section */
 .totalPrice {
     display: flex;
     justify-content: flex-end;

@@ -33,7 +33,11 @@ const OrderSummary: FC = () => {
     };
 
     const handleButtonAddClick = (manga: MangaType) => {
-        cartContext?.setMangaContent(prevState => ([...prevState, manga]))
+        if(cartContext){
+            if (manga.stock - cartContext.mangaContent.filter((item) => item.title === manga.title).length > 0){
+                cartContext?.setMangaContent(prevState => ([...prevState, manga]))
+            }
+        }
     }
 
     const handleButtonRemoveClick = (manga: MangaType) => {
@@ -108,11 +112,12 @@ const OrderSummary: FC = () => {
                                 <p>{manga.price} €</p>
                                 <div className={styles.quantityControls}>
                                     <IconButton onClick={() => handleButtonRemoveClick(manga)}
+                                                sx={{color: 'white'}}
                                                 disabled={cartContext?.mangaContent.filter((item) => item.title === manga.title).length <= 1}>
                                         <RemoveIcon/>
                                     </IconButton>
                                     <span>{cartContext?.mangaContent.filter((item) => item.title === manga.title).length}</span>
-                                    <IconButton onClick={() => handleButtonAddClick(manga)}>
+                                    <IconButton onClick={() => handleButtonAddClick(manga)} sx={{color: 'white'}}>
                                         <AddIcon/>
                                     </IconButton>
                                 </div>
@@ -126,7 +131,7 @@ const OrderSummary: FC = () => {
             </div>
             {cartContext && cartContext?.mangaContent.length > 0 ? (
                 <div className={styles.totalPrice}>
-                    <h3>Total: {totalPrice} €</h3>
+                    <h3>Total: {totalPrice.toFixed(2)} €</h3>
                 </div>
             ):(
                 <></>
