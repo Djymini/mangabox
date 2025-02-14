@@ -1,0 +1,290 @@
+[
+  {
+    "title": "Naruto Tome 1",
+    "collection": "Naruto",
+    "description": "L'histoire de Naruto Uzumaki, un ninja qui rêve de devenir Hokage.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Shonen"
+    ],
+    "price": 6.99,
+    "author": "Masashi Kishimoto",
+    "releaseDate": "2000-02-21",
+    "coverImage": "https://www.nautiljon.com/images/manga/00/90/naruto_109.webp?1731141057",
+    "stock": 150,
+    "publisher": "Kana"
+  },
+  {
+    "title": "One Piece Tome 1",
+    "collection": "One Piece",
+    "description": "Luffy, un jeune pirate, part à la recherche du trésor légendaire : le One Piece.",
+    "genre": [
+      "Aventure",
+      "Action",
+      "Fantasy"
+    ],
+    "price": 7.99,
+    "author": "Eiichiro Oda",
+    "releaseDate": "1997-07-22",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/89/98.webp?1706911272",
+    "stock": 200,
+    "publisher": "Glénat"
+  },
+  {
+    "title": "Dragon Ball Tome 1",
+    "collection": "Dragon Ball",
+    "description": "L'histoire de Son Goku, un jeune garçon qui se lance dans une aventure pour retrouver les Dragon Balls.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Shonen"
+    ],
+    "price": 5.99,
+    "author": "Akira Toriyama",
+    "releaseDate": "1984-11-04",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/00/4900.webp?1498323432",
+    "stock": 180,
+    "publisher": "Glénat"
+  },
+  {
+    "title": "Attack on Titan Tome 1",
+    "collection": "Attack on Titan",
+    "description": "L'humanité lutte pour sa survie contre des créatures géantes appelées Titans.",
+    "genre": [
+      "Action",
+      "Fantasy",
+      "Drame"
+    ],
+    "price": 8.50,
+    "author": "Hajime Isayama",
+    "releaseDate": "2009-09-09",
+    "coverImage": "https://www.nautiljon.com/images/manga/00/17/l_attaque_des_titans_1471.webp?1722330528",
+    "stock": 130,
+    "publisher": "Pika Édition"
+  },
+  {
+    "title": "My Hero Academia Tome 1",
+    "collection": "My Hero Academia",
+    "description": "Izuku Midoriya, un garçon sans pouvoirs, rêve de devenir un super-héros.",
+    "genre": [
+      "Action",
+      "Shonen",
+      "Super-héros"
+    ],
+    "price": 6.50,
+    "author": "Kohei Horikoshi",
+    "releaseDate": "2014-07-07",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/69/20696.webp?1713470066",
+    "stock": 220,
+    "publisher": "Ki-oon"
+  },
+  {
+    "title": "Fullmetal Alchemist Tome 1",
+    "collection": "Fullmetal Alchemist",
+    "description": "Deux frères, Edward et Alphonse, cherchent à retrouver leurs corps après une expérience alchimique ratée.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Fantasy"
+    ],
+    "price": 7.99,
+    "author": "Hiromu Arakawa",
+    "releaseDate": "2001-07-12",
+    "coverImage": "https://www.nautiljon.com/images/manga/00/21/fullmetal_alchemist_12.webp?1730726300",
+    "stock": 160,
+    "publisher": "Kurokawa"
+  },
+  {
+    "title": "Demon Slayer Tome 1",
+    "collection": "Demon Slayer",
+    "description": "Tanjiro Kamado, un jeune garçon, devient un chasseur de démons pour venger sa famille.",
+    "genre": [
+      "Action",
+      "Fantasy",
+      "Shonen"
+    ],
+    "price": 6.99,
+    "author": "Koyoharu Gotouge",
+    "releaseDate": "2016-02-15",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/71/35417.webp?1612729641",
+    "stock": 250,
+    "publisher": "Panini Manga"
+  },
+  {
+    "title": "Bleach Tome 1",
+    "collection": "Bleach",
+    "description": "Ichigo Kurosaki, un adolescent capable de voir les fantômes, devient un Shinigami pour protéger les vivants.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Shonen"
+    ],
+    "price": 5.99,
+    "author": "Tite Kubo",
+    "releaseDate": "2001-08-07",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/40/104.webp?1605549107",
+    "stock": 180,
+    "publisher": "Glénat"
+  },
+  {
+    "title": "Tokyo Ghoul Tome 1",
+    "collection": "Tokyo Ghoul",
+    "description": "Ken Kaneki, un étudiant, se transforme en demi-ghoul après un accident avec un monstre.",
+    "genre": [
+      "Horreur",
+      "Action",
+      "Mystère"
+    ],
+    "price": 7.50,
+    "author": "Sui Ishida",
+    "releaseDate": "2011-10-17",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/88/6388.webp?1458135955",
+    "stock": 140,
+    "publisher": "Glénat"
+  },
+  {
+    "title": "Death Note Tome 1",
+    "collection": "Death Note",
+    "description": "Light Yagami découvre un carnet qui permet de tuer toute personne dont il écrit le nom.",
+    "genre": [
+      "Mystère",
+      "Psychologique",
+      "Thriller"
+    ],
+    "price": 8.00,
+    "author": "Tsugumi Ohba",
+    "releaseDate": "2003-12-01",
+    "coverImage": "https://www.nautiljon.com/images/manga/00/81/death_note_18.webp?1716886620",
+    "stock": 190,
+    "publisher": "Kana"
+  },
+  {
+    "title": "One Punch Man Tome 1",
+    "collection": "One Punch Man",
+    "description": "Saitama, un héros ennuyeux, peut battre n'importe quel ennemi en un seul coup.",
+    "genre": [
+      "Action",
+      "Comédie",
+      "Super-héros"
+    ],
+    "price": 6.99,
+    "author": "ONE",
+    "releaseDate": "2009-06-14",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/19/21091.webp?1519213406",
+    "stock": 220,
+    "publisher": "Kurokawa"
+  },
+  {
+    "title": "Fairy Tail Tome 1",
+    "collection": "Fairy Tail",
+    "description": "Lucy rejoint la guilde des magiciens Fairy Tail et rencontre Natsu et ses compagnons.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Fantasy"
+    ],
+    "price": 6.50,
+    "author": "Hiro Mashima",
+    "releaseDate": "2006-12-15",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/18/81.webp?1582740146",
+    "stock": 180,
+    "publisher": "Pika Édition"
+  },
+  {
+    "title": "Hunter x Hunter Tome 1",
+    "collection": "Hunter x Hunter",
+    "description": "Gon Freecss veut devenir un Hunter et retrouver son père disparu.",
+    "genre": [
+      "Aventure",
+      "Action",
+      "Shonen"
+    ],
+    "price": 7.99,
+    "author": "Yoshihiro Togashi",
+    "releaseDate": "1998-03-03",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/31/2613.webp?1557751980",
+    "stock": 200,
+    "publisher": "Kana"
+  },
+  {
+    "title": "JoJo's Bizarre Adventure Tome 1",
+    "collection": "JoJo's Bizarre Adventure",
+    "description": "L'histoire de la famille Joestar et de leurs combats contre des ennemis surnaturels.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Fantasy"
+    ],
+    "price": 8.99,
+    "author": "Hirohiko Araki",
+    "releaseDate": "1987-01-01",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/80/mini/8908.webp?10",
+    "stock": 150,
+    "publisher": "Kazé Manga"
+  },
+  {
+    "title": "Vinland Saga Tome 1",
+    "collection": "Vinland Saga",
+    "description": "Thorfinn, un jeune viking, cherche à venger la mort de son père.",
+    "genre": [
+      "Action",
+      "Histoire",
+      "Drame"
+    ],
+    "price": 8.00,
+    "author": "Makoto Yukimura",
+    "releaseDate": "2005-04-13",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/84/mini/248.webp?11558515411",
+    "stock": 100,
+    "publisher": "Kurokawa"
+  },
+  {
+    "title": "Rurouni Kenshin Tome 1",
+    "collection": "Rurouni Kenshin",
+    "description": "Un samouraï errant, Kenshin, protège les innocents tout en cherchant la rédemption.",
+    "genre": [
+      "Action",
+      "Aventure",
+      "Historique"
+    ],
+    "price": 6.50,
+    "author": "Nobuhiro Watsuki",
+    "releaseDate": "1994-09-02",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/00/34/mini/643.webp?11566726516",
+    "stock": 160,
+    "publisher": "Kana"
+  },
+  {
+    "title": "Neon Genesis Evangelion Tome 1 - Édition Deluxe",
+    "collection": "Neon Genesis Evangelion",
+    "description": "Shinji Ikari rejoint l'organisation NERV pour combattre des entités surnaturelles.",
+    "genre": [
+      "Mecha",
+      "Action",
+      "Psychologique"
+    ],
+    "price": 7.50,
+    "author": "Yoshiyuki Sadamoto",
+    "releaseDate": "1995-12-05",
+    "coverImage": "https://www.nautiljon.com/images/manga_volumes/11/17/neon_genesis_evangelion_1_edition_deluxe945371.webp?1652398442",
+    "stock": 140,
+    "publisher": "Glénat"
+  },
+  {
+    "title": "Mob Psycho 100 Tome 1",
+    "collection": "Mob Psycho 100",
+    "description": "Un adolescent avec des pouvoirs psychiques cherche à vivre une vie normale.",
+    "genre": [
+      "Comédie",
+      "Action",
+      "Psychologique"
+    ],
+    "price": 6.99,
+    "author": "ONE",
+    "releaseDate": "2012-04-18",
+    "coverImage": "https://www.nautiljon.com/images/manga/00/65/mini/mob_psycho_100_4356.webp?11718273045",
+    "stock": 190,
+    "publisher": "Kurokawa"
+  }
+]

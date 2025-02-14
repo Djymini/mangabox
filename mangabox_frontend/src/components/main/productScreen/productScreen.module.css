@@ -1,0 +1,365 @@
+.productScreen {
+    background-color: var(--lightGrey);
+    display: flex;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+/*Filter part*/
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-right: 16px;
+}
+
+.filter h3 {
+    text-align: center;
+    margin: 0;
+}
+
+.filterSection {
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(34, 49, 39, 0.25);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 220px;
+    margin-bottom: 32px;
+}
+
+.filterSection h4 {
+    background-color: var(--claret);
+    color: white;
+    margin: 0;
+    padding: 4px;
+}
+
+.searchFilter {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchFilter button {
+    padding: 8px 8px;
+    border: 0;
+    border-radius: 16px;
+    background-color: inherit;
+    color: var(--darkGreen);
+    font-weight: normal;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.searchFilter button:hover {
+    background-color: inherit;
+    box-shadow: 0 0 0px var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.searchFilter button:active {
+    background-color: rgba(34, 49, 39, 0.5);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+}
+
+.dropdown button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 8px;
+    border: 0;
+    border-radius: 16px;
+    background-color: inherit;
+    color: var(--darkGreen);
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.dropdown button:hover {
+    background-color: inherit;
+    box-shadow: 0 0 0px var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.dropdown button:active {
+    background-color: rgba(34, 49, 39, 0.5);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
+
+.dropdown input[type=text] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: var(--lightGrey);
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.dropdownContent {
+    display: none;
+}
+
+.dropdownContentIsVisible {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+.checkbox .checkmark:after {
+    left: 7px;
+    top: 4px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.priceFilter {
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceFilter div {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.priceFilter label {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.priceFilter input {
+    width: 100%;
+    font-size: 14px;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: var(--lightGrey);
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+
+/*Product list*/
+.sortSelector {
+    width: 50%;
+    margin-bottom: 16px;
+}
+
+.sortSelector select {
+    font-size: 20px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: var(--claret);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.listCardProduct {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cardProduct {
+    position: relative;
+    display: grid;
+    width: 218px;
+    height: 336px;
+    border-radius: 16px;
+    grid-template-areas:
+    "title title"
+    "author author"
+    "image image"
+    "image image"
+    "shop shop";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 2fr 2fr 1fr;
+    gap: 4px;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: var(--aliceBlue);
+    box-shadow: 4px 4px 4px rgba(34, 49, 39, 0.1);
+    margin: 0 0 16px 16px;
+}
+
+
+.cardLink {
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+}
+
+.cardLink img {
+    height: 100%;
+    border-radius: 8px;
+}
+
+.cardTitle {
+    grid-area: title;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.cardAuthor{
+    grid-area: author;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+    text-align: center;
+}
+
+.cardContentShop {
+    grid-area: shop;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.cardContentShop span {
+    font-weight: bold;
+
+}
+
+.cardContentShop button {
+    padding: 0;
+    border: 0;
+    border-radius: 16px;
+    background-color: inherit;
+    color: var(--claret);
+    font-weight: normal;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.cardContentShop button:hover {
+    background-color: inherit;
+    box-shadow: 0 0 0px var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.cardContentShop button:active {
+    background-color: rgba(34, 49, 39, 0.5);
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}
+
+
+.cardButtonContainer {
+    margin: 0;
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    background-color: var(--claret);
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+
+.cardButtonContainer button {
+    padding: 4px;
+    border: 0;
+    border-radius: 16px;
+    background-color: var(--claret);
+    color: white;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.cardButtonContainer button:hover {
+    background-color: var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.cardButtonContainer button:active {
+    background-color: #6e2b3e;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.95);
+}

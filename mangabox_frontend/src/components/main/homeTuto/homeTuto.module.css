@@ -23,12 +23,14 @@
     width: 25%;
     text-align: center;
 }
+
 .step h3 {
     color: var(--claret);
 }
 
 .step p {
     font-size: 20px;
+    height: 75px;
 }
 
 .arrow {
@@ -48,4 +50,72 @@
     border-top: 16px solid transparent;
     border-bottom: 16px solid transparent;
     border-left: 32px solid var(--claret);
+}
+
+@media screen and (max-width: 950px) {
+    .tuto h2 {
+        font-size: 32px;
+    }
+
+    .step h3 {
+        font-size: 24px;
+    }
+
+    .arrowLine {
+        width: 60px;
+        height: 6px;
+        background-color: var(--claret);
+    }
+
+    .arrowHead {
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+        border-left: 28px solid var(--claret);
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    .tuto h2 {
+        font-size: 24px;
+    }
+
+    .container {
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .step {
+        width: 70%;
+    }
+
+    .step h3 {
+        font-size: 20px;
+    }
+
+    .step p {
+        font-size: 16px;
+    }
+
+    .arrow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .arrowLine {
+        width: 8px;
+        height: 72px;
+        background-color: var(--claret);
+    }
+
+    .arrowHead {
+        border-right: 16px solid transparent;
+        border-left: 16px solid transparent;
+        border-top: 32px solid var(--claret);
+    }
+
 }

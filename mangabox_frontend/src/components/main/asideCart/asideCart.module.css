@@ -1,0 +1,122 @@
+.asideCart {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 72%;
+    bottom: 0;
+    width: 230px;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin-left: 297px;
+    box-shadow: 0 0 .5em .5em rgba(0, 0, 0, .1);
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+
+.headerAsideCart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background: var(--claret);
+    color: white;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.headerAsideCart a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+}
+
+.headerAsideCart p{
+    margin-left: 24px;
+}
+
+.headerAsideCart a:focus {
+    color: inherit;
+}
+
+.bodyAsideCart {
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e7e7e7;
+    scroll-behavior: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.itemAsideCart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "image title title"
+    "image price button";
+    padding: 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.itemAsideCartImage {
+    grid-area: image;
+    width: 75%;
+}
+
+.itemAsideCartTitle {
+    grid-area: title;
+    margin: 0;
+    font-weight: bold;
+}
+
+.itemAsideCartPrice {
+    grid-area: price;
+    margin: auto;
+    font-style: italic;
+}
+
+.itemAsideCartButtonContainer {
+    margin: 0;
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    background-color: var(--claret);
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+
+.itemAsideCartButtonContainer button {
+    padding: 4px;
+    border: 0;
+    border-radius: 16px;
+    background-color: var(--claret);
+    color: white;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.itemAsideCartButtonContainer button:hover {
+    background-color: var(--claret);
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.itemAsideCartButtonContainer button:active {
+    background-color: #6e2b3e;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.95);
+}

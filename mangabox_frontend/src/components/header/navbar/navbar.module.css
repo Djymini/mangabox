@@ -1,0 +1,43 @@
+.navbar {
+    padding: 8px 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0 32px 0 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+.searchContainer div{
+    display: flex;
+    align-items: center;
+}
+
+.navbar input[type=text] {
+    width: 450px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 22px;
+    background-color: var(--lightGrey);
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.navbar input:focus {
+    border: 2px solid var(--mauve);
+}
+
+.searchContainer button {
+    border-radius: 0 8px 8px 0;
+}
+
+.searchContainer button:hover {
+    transform: scale(1);
+}
+
+.buttonUserContainer {
+    padding: 8px 16px;
+}

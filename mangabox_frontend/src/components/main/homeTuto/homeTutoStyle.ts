@@ -1,6 +1,10 @@
-import {paletteColor} from "../../../theme/paletteColor";
+import {paletteColor} from "../../../_themes/paletteColor";
 
 export const homeTutoStyle = {
-    fontSize: '52px',
+    fontSize: {
+        xs: '30px',
+        sm: '40px',
+        md: '52px'},
     color: paletteColor.claret
+
 }
