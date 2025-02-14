@@ -10,7 +10,6 @@ const SearchFilter: FC<{inputSearch: string}> = ({inputSearch}) => {
     const productSearchContext = useContext(ProductSearchContext)
 
     useEffect(() => {
-        console.log(searchContext?.search)
         if (productSearchContext && searchContext) {
             productSearchContext.setSearch(searchContext.search);
         }

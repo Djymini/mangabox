@@ -1,8 +1,9 @@
 export interface MangaType {
+    id: number
     "title": string,
     "collection": string,
-    "description": string,
-    "genre": string[],
+    "overview": string,
+    "genres": string[],
     "price": number,
     "author": string,
     "releaseDate": string,

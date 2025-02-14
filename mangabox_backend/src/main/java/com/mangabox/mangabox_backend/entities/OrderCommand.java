@@ -20,6 +20,15 @@ public class OrderCommand {
         this.date = date;
     }
 
+    public OrderCommand(int user_id, LocalDateTime date) {
+        this.user_id = user_id;
+        this.date = date;
+    }
+
+    public OrderCommand(int user_id) {
+        this.user_id = user_id;
+    }
+
     public int getId() {
         return id;
     }

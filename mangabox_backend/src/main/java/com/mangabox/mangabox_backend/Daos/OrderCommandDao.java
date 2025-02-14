@@ -37,6 +37,11 @@ public class OrderCommandDao {
                 .orElseThrow(() -> new RessourceNotFoundException("La commande avec l'ID : " + id + " n'existe pas"));
     }
 
+    public List<OrderCommand> findAllById(int id) {
+        String sql = "SELECT * FROM orderCommand WHERE id = ?";
+        return jdbcTemplate.query(sql, orderCommandRowMapper, id);
+    }
+
     public List<OrderCommand> findAllByUserId(int userId) {
         String sql = "SELECT * FROM orderCommand WHERE user_id = ?";
         return jdbcTemplate.query(sql, orderCommandRowMapper, userId);
@@ -53,6 +58,13 @@ public class OrderCommandDao {
         orderCommand.setId(id);
         return orderCommand;
     }
+
+    public int findLastOrder(int userId) {
+        String sqlGetId = "SELECT id FROM orderCommand WHERE user_id = ? ORDER BY id DESC LIMIT 1";
+
+        return jdbcTemplate.queryForObject(sqlGetId, Integer.class, userId);
+    }
+
 
     public boolean delete(int id) {
         String sql = "DELETE FROM orderCommand WHERE id = ?";

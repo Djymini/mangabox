@@ -43,8 +43,7 @@ const HomeContent: FC<{}> = ({}) => {
                             <button onClick={handleLoginWindowVisble}>Connexion</button>
                         </div>
                         <div className={styles.contentMain}>
-                            <h2>Bienvenue !</h2>
-                            <button onClick={goToProductsPage}>Commencez votre commande</button>
+                            <button onClick={handleLoginWindowVisble}>Bienvenue</button>
                         </div>
                     </>
                 )}

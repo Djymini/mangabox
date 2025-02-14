@@ -6,9 +6,11 @@ import BodyAsideCart from "./bodyAsideCart/BodyAsideCart";
 import CloseIcon from "@mui/icons-material/Close";
 import {IconButton} from "@mui/material";
 import {paletteColor} from "../../../_themes/paletteColor";
+import {useNavigate} from "react-router-dom";
 
 const AsideCart: FC<{}> = ({}) => {
     const mangaContentContext = useContext(CartContext);
+    const navigate = useNavigate()
 
     const total = () => {
         if(mangaContentContext?.mangaContent === undefined){
@@ -31,6 +33,10 @@ const AsideCart: FC<{}> = ({}) => {
         mangaContentContext?.setIsVisible(!mangaContentContext?.isVisible)
     }
 
+    const handleGoToCart = () => {
+        navigate("/CartResume")
+    }
+
     return (
         <aside className={styles.asideCart}>
             <IconButton aria-label="close the login and register" onClick={handleCloseAside}>
@@ -39,7 +45,7 @@ const AsideCart: FC<{}> = ({}) => {
             <HeaderAsideCart total={total()} badgeValue={mangaContentContext?.mangaContent !== undefined ? mangaContentContext.mangaContent.length : 0}/>
             <BodyAsideCart/>
             <button style={{marginBottom: "16px"}} onClick={handleButtonClearCart}>Vider le panier</button>
-            <button style={{marginBottom: "16px"}}>Valider et payer</button>
+            <button style={{marginBottom: "16px"}} onClick={handleGoToCart}>Valider et payer</button>
         </aside>
     );
 };

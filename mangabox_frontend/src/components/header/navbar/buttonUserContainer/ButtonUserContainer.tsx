@@ -24,10 +24,11 @@ const ButtonUserContainer: FC<{}> = ({}) => {
 
     const handleCart = () => {
         cartContext?.setIsVisible(!cartContext?.isVisible)
+        navigate("/Products")
     }
 
     const handleUser = () => {
-        console.log("navigation");
+        navigate("/ListOrder")
     }
 
     return (

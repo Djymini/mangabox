@@ -1,0 +1,106 @@
+/* Conteneur principal de la page */
+.orderListContainer {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Titre principal de la page */
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Liste des commandes */
+.orderList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Carte de commande */
+.orderCard {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+/* Effet de survol sur la carte de commande */
+.orderCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de la commande */
+.orderCard h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin: 0;
+}
+
+/* Détails de la commande (date, total, statut) */
+.orderCard p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Statut de la commande (livré, en cours, etc.) */
+.status {
+    font-weight: bold;
+    font-size: 16px;
+    color: #4caf50; /* Vert pour les commandes livrées */
+}
+
+/* Bouton de visualisation des détails de la commande */
+.viewButton {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Effet de survol sur le bouton de visualisation */
+.viewButton:hover {
+    background-color: #0056b3;
+}
+
+/* Message d'erreur (en cas de problème lors du chargement des commandes) */
+.error {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Message de chargement (lorsque les données sont en train d'être récupérées) */
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+/* Message lorsque le panier est vide */
+.emptyCartMessage {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 20px;
+}

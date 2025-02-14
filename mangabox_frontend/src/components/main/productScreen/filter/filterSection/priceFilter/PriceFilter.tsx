@@ -27,11 +27,11 @@ const PriceFilter: FC<{}> = ({}) => {
         <div className={styles.priceFilter}>
             <div>
                 <label>Min</label>
-                <input type="number" name="number" min="0" value={minPrice} onChange={handleMinPriceChange}/>
+                <input type="number" name="number" min="0" value={productSearchContext?.minPrice} onChange={handleMinPriceChange}/>
             </div>
             <div>
                 <label>Max</label>
-                <input type="number" name="number" value={maxPrice} onChange={handleMaxPriceChange}/>
+                <input type="number" name="number" value={productSearchContext?.maxPrice} onChange={handleMaxPriceChange}/>
             </div>
         </div>
     );

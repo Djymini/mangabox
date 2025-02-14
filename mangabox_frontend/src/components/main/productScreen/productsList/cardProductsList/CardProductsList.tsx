@@ -17,8 +17,6 @@ const CardProductsList: FC<{}> = ({}) => {
             params.append("search", productSearchContext.search);
         }
 
-
-        // Ajouter les éditeurs et les genres
         if (productSearchContext?.publisher?.length) {
             productSearchContext.publisher.forEach(publisher => {
                 params.append("publisher", publisher);

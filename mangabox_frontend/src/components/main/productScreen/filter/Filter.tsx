@@ -1,4 +1,4 @@
-import {FC, useContext, useEffect, useState} from 'react';
+import {FC, useContext} from 'react';
 import {SearchContext} from "../../../../context/SearchContext";
 import {mangaGenres} from "../../../../_data/mangaGenre";
 import FilterSection from "./filterSection/FilterSection";
@@ -11,6 +11,16 @@ import {ProductSearchContext} from "../../../../context/ProductSearchContexte";
 
 const Filter: FC<{}> = ({}) => {
     const searchContext = useContext(SearchContext);
+    const productSearhContext = useContext(ProductSearchContext);
+
+    const handleButtonClearFilter = () => {
+        searchContext?.setSearch("");
+        productSearhContext?.setMinPrice(0);
+        productSearhContext?.setMaxPrice(500);
+        productSearhContext?.setSearch("");
+        productSearhContext?.setPublisher([]);
+        productSearhContext?.setGenres([]);
+    }
 
     return (
         <section className={styles.filter}>
@@ -36,7 +46,7 @@ const Filter: FC<{}> = ({}) => {
                 <PriceFilter/>
             </FilterSection>
 
-            <button>Réinitialiser le filtre</button>
+            <button onClick={handleButtonClearFilter}>Réinitialiser le filtre</button>
         </section>
     );
 };

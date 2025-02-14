@@ -1,4 +1,4 @@
-import {FC, useContext, useEffect} from 'react';
+import {FC, useContext} from 'react';
 import {MangaType} from "../../../../../../MangaType";
 import styles from "../../../productScreen.module.css"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
@@ -28,13 +28,19 @@ const CardProduct: FC<{manga:MangaType}> = ({manga}) => {
 
     return (
         <div className={styles.cardProduct}>
-            <a className={styles.cardLink} href="#"><img src={manga.coverImage}/></a>
+            <a className={styles.cardLink} href={`/Product/${manga.id}`}><img src={manga.coverImage}/></a>
             <p className={styles.cardTitle}>{manga.title}</p>
             <p className={styles.cardAuthor}>{manga.author}</p>
             <div className={styles.cardContentShop}>
                 {manga.stock > 0 ? (
                     <>
                         <span>{manga.price + "€"}</span>
+                        {mangaContentContext ? (
+                            <span>{"stock: " + (manga.stock - mangaContentContext?.mangaContent.filter((item) => item.title === manga.title).length)}</span>
+                        ):(
+                            <></>
+                        )}
+
                         {mangaContentContext?.mangaContent.indexOf(manga) === -1 ? (
                                 <IconButton aria-label="add to shopping cart" sx={{fontSize: "32px"}}
                                             onClick={handleButtonAddClick}>
